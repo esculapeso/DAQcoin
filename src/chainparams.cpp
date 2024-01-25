@@ -54,7 +54,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "The Times 03/Jan/2018 Bitcoin is name of the game for new generation of firms";
+    const char* pszTimestamp = "DARQ DLT AI HR  and QT in 2024";
     const CScript genesisOutputScript = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -360,7 +360,7 @@ public:
 //            genesis = CreateGenesisBlock(nGenesisTime, i, 0x1e00ffff, 2, 5000 * COIN);
 //            //genesis.hashPrevBlock = TempHashHolding;
 //            // Depending on when the timestamp is on the genesis block. You will need to use GetX16RHash or GetX16RV2Hash. Replace GetHash() with these below
-//            consensus.hashGenesisBlock = genesis.GetHash();
+//            consensus.hashGenesisBlock = genesis.GetX16RHash();
 //
 //            arith_uint256 BestBlockHashArith = UintToArith256(BestBlockHash);
 //            if (UintToArith256(consensus.hashGenesisBlock) < BestBlockHashArith) {
@@ -398,18 +398,18 @@ public:
 //
 //        std::cout << "Totals: hash algo " <<  " hits " << totalHits << " total " << totalTime << " avg " << totalTime/totalHits << std::endl;
 //
-//        genesis.hashPrevBlock = TempHashHolding;
+//       genesis.hashPrevBlock = TempHashHolding;
 //
-//        return;
+//       return;
 
 //        /////////////////////////////////////////////////////////////////
 
-        genesis = CreateGenesisBlock(nGenesisTime, 15615880, 0x1e00ffff, 2, 5000 * COIN);
+        genesis = CreateGenesisBlock(nGenesisTime, 6546902, 0x1e00ffff, 2, 5000 * COIN);
         consensus.hashGenesisBlock = genesis.GetX16RHash();
 
         //Test MerkleRoot and GenesisBlock
-        assert(consensus.hashGenesisBlock == uint256S("0x000000ecfc5e6324a079542221d00e10362bdc894d56500c414060eea8a3ad5a"));
-        assert(genesis.hashMerkleRoot == uint256S("28ff00a867739a352523808d301f504bc4547699398d70faf2266a8bae5f3516"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000010b6dc852588918a3148b1c33c3dbb54b05cccd7407801d9c0094cd976"));
+        assert(genesis.hashMerkleRoot == uint256S("4778039e4e40a7ffb9b815b484d8a3d9b022610dd2f9231a20d33ab9ab4fcc37"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
