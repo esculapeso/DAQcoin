@@ -176,17 +176,20 @@ public:
          */
         pchMessageStart[0] = 0x44; // D
         pchMessageStart[1] = 0x41; // A
-        pchMessageStart[2] = 0x51; // Q
-        pchMessageStart[3] = 0x43; // C
+        pchMessageStart[2] = 0x52; // R
+        pchMessageStart[3] = 0x51; // Q
         nDefaultPort = 8767;
         nPruneAfterHeight = 100000;
+        uint32_t nGenesisTime = 1537466400;  // Thursday, September 20, 2018 12:00:00 PM GMT-06:00
 
-        genesis = CreateGenesisBlock(1703437067, 25023716, 0x1e00ffff, 4, 5000 * COIN);
+        genesis = CreateGenesisBlock(nGenesisTime, 6546902, 0x1e00ffff, 2, 5000 * COIN);
 
         consensus.hashGenesisBlock = genesis.GetX16RHash();
 
-        assert(consensus.hashGenesisBlock == uint256S("0000006b444bc2f2ffe627be9d9e7e7a0730000870ef6eb6da46c8eae389df90"));
-        assert(genesis.hashMerkleRoot == uint256S("28ff00a867739a352523808d301f504bc4547699398d70faf2266a8bae5f3516"));
+        // assert(consensus.hashGenesisBlock == uint256S("0000006b444bc2f2ffe627be9d9e7e7a0730000870ef6eb6da46c8eae389df90"));
+        // assert(genesis.hashMerkleRoot == uint256S("28ff00a867739a352523808d301f504bc4547699398d70faf2266a8bae5f3516"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000010b6dc852588918a3148b1c33c3dbb54b05cccd7407801d9c0094cd976"));
+        assert(genesis.hashMerkleRoot == uint256S("4778039e4e40a7ffb9b815b484d8a3d9b022610dd2f9231a20d33ab9ab4fcc37"));
 
         vSeeds.emplace_back("seed-raven.bitactivate.com", false);
         vSeeds.emplace_back("seed-raven.ravencoin.com", false);
@@ -334,10 +337,10 @@ public:
         consensus.defaultAssumeValid = uint256S("0x000000006272208605c4df3b54d4d5515759105e7ffcb258e8cd8077924ffef1");
 
 
-        pchMessageStart[0] = 0x52; // R
-        pchMessageStart[1] = 0x56; // V
-        pchMessageStart[2] = 0x4E; // N
-        pchMessageStart[3] = 0x54; // T
+        pchMessageStart[0] = 0x44; // D
+        pchMessageStart[1] = 0x41; // A
+        pchMessageStart[2] = 0x52; // R
+        pchMessageStart[3] = 0x51; // Q
         nDefaultPort = 18770;
         nPruneAfterHeight = 1000;
 
