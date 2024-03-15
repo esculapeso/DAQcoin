@@ -341,7 +341,7 @@ public:
         pchMessageStart[1] = 0x41; // A
         pchMessageStart[2] = 0x52; // R
         pchMessageStart[3] = 0x51; // Q
-        nDefaultPort = 18770;
+        nDefaultPort = 8767;
         nPruneAfterHeight = 1000;
 
         uint32_t nGenesisTime = 1537466400;  // Thursday, September 20, 2018 12:00:00 PM GMT-06:00
